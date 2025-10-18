@@ -1,3 +1,4 @@
+#Paola De Jesus Morales Andrade
 class Pila:
     def __init__(self):
         self.items = []
@@ -52,6 +53,7 @@ def editor_con_undo():
             break
         else:
             print("Opción inválida.")
+
 
 
 editor_con_undo()
