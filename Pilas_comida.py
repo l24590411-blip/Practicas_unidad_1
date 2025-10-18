@@ -1,5 +1,5 @@
 #Paola de Jesus Morales Andrade
-#Estructura de datos Gpo G
+#Estructura de datos Gpo B
 #Ing.Sistemas computacionales
 #05/09/2025
 #1. Inicio
@@ -25,17 +25,14 @@
 #   5.7 Escribir: "Persona ", i, " recibió: ", prod_selc, " y ", beb_selc
 #6. Fin Para
 #7. Fin
-
-
 import random
-
-# Clase que representa la cafetería
+import time
+import tracemalloc
 class Cafeteria:
     def __init__(self):
         self.productos = ["Torta", "Sandwich", "Dobladita"]
         self.bebidas = ["Cafe", "Coca cola", "Juego"]
         self.pila = []
-
     def generar_pedido(self):
         # Selección aleatoria de producto
         prod = random.randint(0, 2)
@@ -48,19 +45,22 @@ class Cafeteria:
         self.pila.append(beb_selc)
 
         return prod_selc, beb_selc
-
 # Programa principal
 def main():
     cafeteria = Cafeteria()
-
     print("¿Cuántas personas llegaron a la cafetería?")
     N = int(input("Ingrese la cantidad: "))
-
+    tracemalloc.start()
+    inicio = time.perf_counter_ns()
     for i in range(1, N + 1):
         prod, beb = cafeteria.generar_pedido()
         print(f"Persona {i} recibió: {prod} y {beb}")
-
+    fin = time.perf_counter_ns()
+    memoria_actual, memoria_maxima = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    print(f"\nTiempo total de ejecución: {fin - inicio} nanosegundos")
+    print(f"Memoria actual usada: {memoria_actual} bytes")
+    print(f"Memoria máxima usada: {memoria_maxima} bytes")
 
 # Ejecutar el programa
 main()
-
