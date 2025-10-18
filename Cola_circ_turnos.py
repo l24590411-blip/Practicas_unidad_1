@@ -1,3 +1,4 @@
+#Paola De Jesus Morales Andrade
 class ColaCircular:
     def __init__(self, jugadores):
         self.jugadores = jugadores
@@ -17,5 +18,6 @@ def juego_turnos():
     while x == "s" or x=="S":
         print(f"Turno de: {cola.siguiente_turno()}")
         x = input("\nEscribe 's' para siguiente turno o cualquier otro caracter para terminar: ").strip().lower()
+
 
 juego_turnos()
