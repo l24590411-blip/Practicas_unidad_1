@@ -1,3 +1,4 @@
+#Paola De Jesus Morales Andrade
 class Cola:
     def __init__(self):
         self.items = []
@@ -45,6 +46,7 @@ def cajero_automatico():
             break
         else:
             print("Opción inválida.")
+
 
 
 cajero_automatico()
